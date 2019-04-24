@@ -1,4 +1,4 @@
-#!coding = utf-8
+# coding=UTF-8
 #[oppose_odds, uven_odds]
 
 def manbet_uven(odd_platform, odd_manbet, money_platform, platform):
@@ -82,4 +82,4 @@ if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
     # lovebet_vs_manbet(1.92, 2.00 ,2000,'lovebet')
-    lovebet_vs_manbetx_insurance(odd_lovebet=1.86, odd_wellbet=2.06, money_lovebet=2202)
+    lovebet_vs_manbetx_insurance(odd_lovebet=1.87, odd_wellbet=2.05, money_lovebet=3053)
