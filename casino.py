@@ -24,14 +24,14 @@ def manbet_uven(odd_platform, odd_manbet, money_platform, platform):
     ))
     return money_manbet
 
-def lovebet_vs_manbet(odd_platform, odd_manbet, money_platform, platform):
+def platform_vs_manbet(odd_platform, odd_manbet, money_platform, platform):
     '''
-    爱博与万博打对水。
+    平台与万博打对水。
     爱博负盈利>1000, 返水3%，爱博/万博 日返水 0.4%，爱博存款送10%彩金。
 
-    :param odd_lovebet: 爱博赔率
+    :param odd_platform: 爱博赔率
     :param odd_manbetx: 万博赔率
-    :param money_lovebet: 爱博下注额
+    :param money_platform: 爱博下注额
     :param platform: 平台（爱博，贝博，吉祥坊等）
     :return: 万博下注额
     '''
@@ -81,5 +81,5 @@ def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
 if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
-    # lovebet_vs_manbet(1.92, 2.00 ,2000,'lovebet')
-    lovebet_vs_manbetx_insurance(odd_lovebet=1.87, odd_wellbet=2.05, money_lovebet=3053)
+    platform_vs_manbet(1.94, 2.01, 1791,'lovebet')
+    # lovebet_vs_manbetx_insurance(odd_lovebet=1.87, odd_wellbet=2.05, money_lovebet=3053)
