@@ -36,12 +36,13 @@ def platform_vs_manbet(odd_platform, odd_manbet, money_platform, platform):
     :return: 万博下注额
     '''
     re_insurance_percent = 0.03 if platform == 'lovebet' else 0
+    money_reward = int(money_platform/1000) * 10 if platform == 'lovebet' else 0
     reward_percent = 0.004
     money_manbet = money_platform * (odd_platform - re_insurance_percent)/odd_manbet
     print('money_manbet: {}'.format(money_manbet))
     print('profit: {}'.format(
         money_platform * odd_platform - money_platform - money_manbet + money_manbet * reward_percent +
-        money_platform * reward_percent
+        money_platform * reward_percent + money_reward
     ))
     return money_manbet
 
@@ -81,5 +82,5 @@ def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
 if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
-    platform_vs_manbet(1.94, 2.01, 1791,'lovebet')
+    platform_vs_manbet(odd_platform=2.11, odd_manbet=1.85, money_platform=2277,platform='lovebet')
     # lovebet_vs_manbetx_insurance(odd_lovebet=1.87, odd_wellbet=2.05, money_lovebet=3053)
