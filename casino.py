@@ -11,7 +11,8 @@ def manbet_uven(odd_platform, odd_manbet, money_platform, platform):
     :return: 万博下注额
     '''
     re_insurance_percent = 0.03 if platform == 'lovebet' else 0
-    reward_percent = 0.004
+    reward_percent_manbet = 0.004
+    reward_percent_platform = 0.007 if platform == 'crown' else 0.004
     money_manbet_max = 152 / (odd_manbet - 1) / 0.05 #max_bet is for Uven, 0.05 is reward for uven
     money_platform_max = (money_manbet_max * odd_manbet + money_manbet_max * (odd_manbet - 1) * 0.05) / ( odd_platform - re_insurance_percent)
     money_manbet = money_platform / money_platform_max * money_manbet_max
@@ -20,7 +21,8 @@ def manbet_uven(odd_platform, odd_manbet, money_platform, platform):
         money_manbet_max=money_manbet_max, money_manbet=money_manbet, money_platform_max=money_platform_max, money_platform=money_platform))
 
     print('profit: {}'.format(
-        money_platform * odd_platform - money_platform - money_manbet + money_platform * reward_percent + money_manbet * reward_percent
+        money_platform * odd_platform - money_platform - money_manbet +
+        money_platform * reward_percent_platform + money_manbet * reward_percent_manbet
     ))
     return money_manbet
 
@@ -56,19 +58,19 @@ def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
     :param money_lovebet: 爱博投注额
     :return:吉祥坊投注额
     '''
-    if money_lovebet > 1000 and money_lovebet < 1999:
+    if money_lovebet >= 1000 and money_lovebet <= 1999:
         money_rebonus = 59
-    elif money_lovebet > 2000 and money_lovebet < 4999:
+    elif money_lovebet >= 2000 and money_lovebet <= 4999:
         money_rebonus = 99
-    elif money_lovebet > 5000 and money_lovebet < 9999:
+    elif money_lovebet >= 5000 and money_lovebet <= 9999:
         money_rebonus = 199
-    elif money_lovebet > 10000 and money_lovebet < 29999:
+    elif money_lovebet >= 10000 and money_lovebet <= 29999:
         money_rebonus = 299
-    elif money_lovebet > 30000 and money_lovebet < 49999:
+    elif money_lovebet >= 30000 and money_lovebet <= 49999:
         money_rebonus = 399
-    elif money_lovebet > 50000 and money_lovebet < 99999:
+    elif money_lovebet >= 50000 and money_lovebet <= 99999:
         money_rebonus = 699
-    elif money_lovebet > 100000:
+    elif money_lovebet >= 100000:
         money_rebonus = 999
 
     money_wellbet = (odd_lovebet * money_lovebet - money_lovebet * 0.03 - money_rebonus)/odd_wellbet
@@ -82,5 +84,6 @@ def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
 if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
-    platform_vs_manbet(odd_platform=2.11, odd_manbet=1.85, money_platform=2277,platform='lovebet')
-    # lovebet_vs_manbetx_insurance(odd_lovebet=1.87, odd_wellbet=2.05, money_lovebet=3053)
+    # manbet_uven(odd_platform=1.86,odd_manbet=2.07,money_platform=1418,platform='crown')
+    # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
+    lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
