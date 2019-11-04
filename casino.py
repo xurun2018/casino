@@ -81,9 +81,44 @@ def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
     ))
     return money_wellbet
 
+
+def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
+    '''
+
+    :param odd_mycat: mycat赔率
+    :param odd_manbetx: 万博赔率
+    :param money_mycat: mycat下注额
+    :return:
+    '''
+
+    money_mycat_best = 2000/(odd_mycat - 1)  #money_mycat下注最佳额
+    money_mycat_prof = money_mycat * (odd_mycat - 1)    #money_mycat盈利金额
+
+    if money_mycat_prof >= 300 and money_mycat_prof < 500:
+        bonus = 58
+    elif money_mycat_prof >= 500 and money_mycat_prof < 2000:
+        bonus = 88
+    elif money_mycat_prof >= 2000:
+        bonus = 388
+    else:
+        bonus = 0
+
+    money_manbetx = (odd_mycat * money_mycat + bonus) / odd_manbetx
+
+    profit = (odd_manbetx-1) * money_manbetx - money_mycat
+
+    print("mycat最佳投注额: ", money_mycat_best)
+    print("manbet下注额: ", money_manbetx)
+    print("profit盈利: ", profit)
+
+
+
+
+
 if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
     # manbet_uven(odd_platform=1.86,odd_manbet=2.07,money_platform=1418,platform='crown')
     # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
-    lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
+    # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
+    mycat_vs_manbetx(odd_mycat=1.96, odd_manbetx=1.97, money_mycat=2222)
