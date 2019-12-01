@@ -86,7 +86,7 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     '''
 
     :param odd_mycat: mycat赔率
-    :param odd_manbetx: 万博赔率
+    :param : 万博赔率
     :param money_mycat: mycat下注额
     :return:
     '''
@@ -111,14 +111,10 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     print("manbet下注额: ", money_manbetx)
     print("profit盈利: ", profit)
 
-
-
-
-
 if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
     # manbet_uven(odd_platform=1.86,odd_manbet=2.07,money_platform=1418,platform='crown')
     # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
-    mycat_vs_manbetx(odd_mycat=1.96, odd_manbetx=1.97, money_mycat=2222)
+    mycat_vs_manbetx(odd_mycat=1.87, odd_manbetx=2.11, money_mycat=2400)
