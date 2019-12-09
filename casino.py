@@ -26,6 +26,7 @@ def manbet_uven(odd_platform, odd_manbet, money_platform, platform):
     ))
     return money_manbet
 
+
 def platform_vs_manbet(odd_platform, odd_manbet, money_platform, platform):
     '''
     平台与万博打对水。
@@ -47,6 +48,7 @@ def platform_vs_manbet(odd_platform, odd_manbet, money_platform, platform):
         money_platform * reward_percent + money_reward
     ))
     return money_manbet
+
 
 def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
     '''
@@ -111,10 +113,43 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     print("manbet下注额: ", money_manbetx)
     print("profit盈利: ", profit)
 
+
+def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
+    '''
+
+    :param odd_mycat: mycat 赔率
+    :param odd_manbetx: 万博赔率
+    :param money_mycat: mycat下注额
+    :param mycat_flag: mycat赔率是否是上盘
+    :return:
+    '''
+
+    # 活动期间用户于平博体育、沙巴体育或猫先生体育投注欧洲冠军联赛（仅限早盘），用户投注队伍为该场赛事首先进球队伍，注单为结算为赢，即可获得58元红利。
+    # 有效投注>=200，上盘打出，大概率盈利嘉奖58元
+
+    money_mycat = 200
+    bonus = 58
+
+    if mycat_flag:
+        money_manbetx = (odd_mycat * money_mycat + bonus) / odd_manbetx
+        profit = money_manbetx * ( odd_manbetx - 1 ) - money_mycat
+        max_lose = money_mycat * (odd_mycat - 1) - money_manbetx
+    else:
+        money_manbetx = (odd_mycat * money_mycat - bonus) / odd_manbetx
+        profit = money_mycat * (odd_mycat - 1) - money_manbetx
+        max_lose = money_manbetx * (odd_manbetx - 1) - money_mycat
+
+    print("manbet下注额: ", money_manbetx)
+    print("profit盈利: ", profit)
+    print("max损失:", max_lose)
+
+
 if __name__ == '__main__':
 
     # manbet_uven(1.92, 2.00, 2000, 'wellbet')
     # manbet_uven(odd_platform=1.86,odd_manbet=2.07,money_platform=1418,platform='crown')
     # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
-    mycat_vs_manbetx(odd_mycat=2.12, odd_manbetx=1.90, money_mycat=2200)
+
+    # mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
+    eura_champion(odd_mycat= 1.96, odd_manbetx= 1.96,mycat_flag=True)
