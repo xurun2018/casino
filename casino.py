@@ -127,7 +127,7 @@ def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
     # 活动期间用户于平博体育、沙巴体育或猫先生体育投注欧洲冠军联赛（仅限早盘），用户投注队伍为该场赛事首先进球队伍，注单为结算为赢，即可获得58元红利。
     # 有效投注>=200，上盘打出，大概率盈利嘉奖58元
 
-    money_mycat = 200
+    money_mycat = 300
     bonus = 58
 
     if mycat_flag:
@@ -152,4 +152,6 @@ if __name__ == '__main__':
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
     # mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
-    eura_champion(odd_mycat= 1.96, odd_manbetx= 1.96,mycat_flag=True)
+    eura_champion(odd_mycat= 1.9, odd_manbetx= 2.09, mycat_flag=False)
+    # mycat_grace 亨克，利物浦，巴萨，里尔，布拉格斯拉维亚，里昂，本菲卡，瓦伦西亚
+    # mycat_badou 亨克，萨尔茨堡，巴萨，
