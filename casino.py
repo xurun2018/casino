@@ -127,7 +127,7 @@ def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
     # 活动期间用户于平博体育、沙巴体育或猫先生体育投注欧洲冠军联赛（仅限早盘），用户投注队伍为该场赛事首先进球队伍，注单为结算为赢，即可获得58元红利。
     # 有效投注>=200，上盘打出，大概率盈利嘉奖58元
 
-    money_mycat = 210
+    money_mycat = 205
     bonus = 58
 
     if mycat_flag:
@@ -154,7 +154,7 @@ if __name__ == '__main__':
     # mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
 
 
-    # mycat_grace
+    # mycat_grace 210
     # 萨格勒布戴纳魔 vs 曼城cat
     # eura_champion(odd_mycat=1.96, odd_manbetx=2.02, mycat_flag=True)
     # 勒沃库森cat vs 尤文图斯
@@ -163,6 +163,35 @@ if __name__ == '__main__':
     # eura_champion(odd_mycat=1.87, odd_manbetx=2.09, mycat_flag=False)
     # 布鲁日 vs 皇马cat
     # eura_champion(odd_mycat=1.94, odd_manbetx=2.01, mycat_flag=True)
+    # 拜仁 vs 热刺cat
+    # eura_champion(odd_mycat=2.04, odd_manbetx=1.93, mycat_flag=False)
+    # 马竞 vs 火车头cat
+    # eura_champion(odd_mycat=2.12, odd_manbetx=1.87, mycat_flag=False)
+    # 巴黎cat vs 加拉塔萨雷
+    # eura_champion(odd_mycat=1.98, odd_manbetx=1.96, mycat_flag=True)
+    # 奥林匹亚 vs 贝尔格莱德cat
+    # eura_champion(odd_mycat=1.9, odd_manbetx=2.07, mycat_flag=False)
+
+
+    # mycat_badou
+    # 萨格勒布戴纳魔 vs 曼城cat
+    # eura_champion(odd_mycat=1.94, odd_manbetx=2.01, mycat_flag=True)
+    # 勒沃库森cat vs 尤文图斯
+    # eura_champion(odd_mycat=1.97, odd_manbetx=1.98, mycat_flag=True)
+    # 旷工cat vs 亚特兰大
+    # eura_champion(odd_mycat=2.03, odd_manbetx=1.92, mycat_flag=True)
+    # 布鲁日 vs 皇马cat
+    # eura_champion(odd_mycat=1.95, odd_manbetx=2.0, mycat_flag=True)
+    # 拜仁cat vs 热刺
+    # eura_champion(odd_mycat=1.98, odd_manbetx=1.97, mycat_flag=True)
+    # 马竞cat vs 火车头
+    # eura_champion(odd_mycat=1.85, odd_manbetx=2.11, mycat_flag=True)
+    # 巴黎cat vs 加拉塔萨雷
+    # eura_champion(odd_mycat=2, odd_manbetx=1.95, mycat_flag=True)
+    # 奥林匹亚cat vs 贝尔格莱德
+    eura_champion(odd_mycat=2.05, odd_manbetx=1.86, mycat_flag=True)
+
+
 
 
     # mycat_badou
