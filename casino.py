@@ -152,6 +152,17 @@ if __name__ == '__main__':
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
     # mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
-    eura_champion(odd_mycat= 1.88, odd_manbetx= 2.09, mycat_flag=False)
-    # mycat_grace 亨克，利物浦，巴萨，里尔，布拉格斯拉维亚，里昂，本菲卡，瓦伦西亚
-    # mycat_badou 亨克，萨尔茨堡，巴萨，里尔，布拉格斯拉维亚，莱比锡，泽尼特，瓦伦西亚
+
+
+    # mycat_grace
+    # 萨格勒布戴纳魔 vs 曼城cat
+    # eura_champion(odd_mycat=1.96, odd_manbetx=2.02, mycat_flag=True)
+    # 勒沃库森cat vs 尤文图斯
+    # eura_champion(odd_mycat=2.01, odd_manbetx=1.94, mycat_flag=True)
+    # 旷工 vs 亚特兰大cat
+    # eura_champion(odd_mycat=1.87, odd_manbetx=2.09, mycat_flag=False)
+    # 布鲁日 vs 皇马cat
+    # eura_champion(odd_mycat=1.94, odd_manbetx=2.01, mycat_flag=True)
+
+
+    # mycat_badou
