@@ -151,7 +151,7 @@ if __name__ == '__main__':
     # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
-    # mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
+    mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
 
 
     # mycat_grace 210
@@ -173,7 +173,7 @@ if __name__ == '__main__':
     # eura_champion(odd_mycat=1.9, odd_manbetx=2.07, mycat_flag=False)
 
 
-    # mycat_badou
+    # mycat_badou 205
     # 萨格勒布戴纳魔 vs 曼城cat
     # eura_champion(odd_mycat=1.94, odd_manbetx=2.01, mycat_flag=True)
     # 勒沃库森cat vs 尤文图斯
@@ -189,7 +189,7 @@ if __name__ == '__main__':
     # 巴黎cat vs 加拉塔萨雷
     # eura_champion(odd_mycat=2, odd_manbetx=1.95, mycat_flag=True)
     # 奥林匹亚cat vs 贝尔格莱德
-    eura_champion(odd_mycat=2.05, odd_manbetx=1.86, mycat_flag=True)
+    # eura_champion(odd_mycat=2.05, odd_manbetx=1.86, mycat_flag=True)
 
 
 
