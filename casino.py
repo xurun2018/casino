@@ -114,6 +114,22 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     print("profit盈利: ", profit)
 
 
+def pb_vs_manbetx(odd_pb, odd_manbetx):
+    '''
+
+    :param odd_pb: 拼搏赔率
+    :param odd_manbetx: 万博赔率
+    :return:
+    '''
+    rebonus = 888
+    money_pb = rebonus / 0.5
+    money_manbetx = (money_pb * odd_pb - rebonus) / odd_manbetx
+    print("manbet下注额: ", money_manbetx)
+    print("profit:", money_manbetx * (odd_manbetx - 1) + rebonus - money_pb )
+    print("profit:", money_pb * (odd_pb - 1) - money_manbetx )
+
+
+
 def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
     '''
 
@@ -151,8 +167,8 @@ if __name__ == '__main__':
     # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
-    mycat_vs_manbetx(odd_mycat=1.94, odd_manbetx=2.00, money_mycat=2200)
-
+    # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=2100)
+    pb_vs_manbetx(odd_pb=1.91, odd_manbetx=2.04)
 
     # mycat_grace 210
     # 萨格勒布戴纳魔 vs 曼城cat
