@@ -114,15 +114,19 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     print("profit盈利: ", profit)
 
 
-def pb_vs_manbetx(odd_pb, odd_manbetx):
+def  pb_vs_manbetx(odd_pb, odd_manbetx, money_pb):
     '''
 
     :param odd_pb: 拼搏赔率
     :param odd_manbetx: 万博赔率
+    :param money_pb： pb下注额
     :return:
     '''
-    rebonus = 888
-    money_pb = rebonus / 0.5
+
+    if money_pb / 2 > 888:
+        rebonus = 888
+    else:
+        rebonus = money_pb / 2
     money_manbetx = (money_pb * odd_pb - rebonus) / odd_manbetx
     print("manbet下注额: ", money_manbetx)
     print("profit:", money_manbetx * (odd_manbetx - 1) + rebonus - money_pb )
@@ -168,7 +172,7 @@ if __name__ == '__main__':
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
     # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=2100)
-    pb_vs_manbetx(odd_pb=1.91, odd_manbetx=2.04)
+    pb_vs_manbetx(odd_pb=2.12, odd_manbetx=1.85, money_pb=1797)
 
     # mycat_grace 210
     # 萨格勒布戴纳魔 vs 曼城cat
