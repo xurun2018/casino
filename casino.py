@@ -194,7 +194,7 @@ if __name__ == '__main__':
     # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
     # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
-    # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=2100)
+    # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=510)
 
     # pb_vs_manbetx(odd_pb=2.12, odd_manbetx=1.85, money_pb=1797)
 
