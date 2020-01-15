@@ -116,6 +116,12 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
 
 def  pb_vs_manbetx(odd_pb, odd_manbetx, money_pb):
     '''
+    有效投注    最高返还    流水倍数
+    >=300       28          3
+    >=500       38          3
+    >=1000      88          3
+    >=5000      508         3
+    >=10000     1088        3
 
     :param odd_pb: 拼搏赔率
     :param odd_manbetx: 万博赔率
@@ -123,14 +129,24 @@ def  pb_vs_manbetx(odd_pb, odd_manbetx, money_pb):
     :return:
     '''
 
-    if money_pb / 2 > 888:
-        rebonus = 888
+    rebonus_water = 0.004
+    if money_pb >= 300 and money_pb < 500:
+        rebonus = 28
+    elif money_pb >= 500 and money_pb < 1000:
+        rebonus = 38
+    elif money_pb >= 1000 and money_pb < 5000:
+        rebonus = 88
+    elif money_pb >= 5000 and money_pb < 10000:
+        rebonus = 588
+    elif money_pb >= 10000:
+        rebonus = 1088
     else:
-        rebonus = money_pb / 2
+        rebonus = 0
+
     money_manbetx = (money_pb * odd_pb - rebonus) / odd_manbetx
     print("manbet下注额: ", money_manbetx)
-    print("profit:", money_manbetx * (odd_manbetx - 1) + rebonus - money_pb )
-    print("profit:", money_pb * (odd_pb - 1) - money_manbetx )
+    print("profit:", money_manbetx * (odd_manbetx - 1) + rebonus - money_pb + ( money_pb + money_manbetx ) * rebonus_water )
+    print("profit:", money_pb * (odd_pb - 1) - money_manbetx + ( money_pb + money_manbetx ) * rebonus_water )
 
 
 def  pb_vs_manbetx_barcelona_madrid(odd_pb, odd_manbetx, money_pb):
@@ -196,6 +212,5 @@ if __name__ == '__main__':
 
     # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=510)
 
-    # pb_vs_manbetx(odd_pb=2.12, odd_manbetx=1.85, money_pb=1797)
-
-    pb_vs_manbetx_barcelona_madrid(odd_pb=1.97, odd_manbetx=1.97, money_pb=1000)
+    # pb_vs_manbetx_barcelona_madrid(odd_pb=1.97, odd_manbetx=1.97, money_pb=1000)
+    pb_vs_manbetx(odd_pb=1.97, odd_manbetx=1.97, money_pb=5050)
