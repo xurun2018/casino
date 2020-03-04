@@ -88,30 +88,28 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     '''
 
     :param odd_mycat: mycat赔率
-    :param : 万博赔率
+    :param odd_manbetx: 万博赔率
     :param money_mycat: mycat下注额
     :return:
     '''
 
-    money_mycat_best = 2000/(odd_mycat - 1)  #money_mycat下注最佳额
-    money_mycat_prof = money_mycat * (odd_mycat - 1)    #money_mycat盈利金额
+    money_manbet_best = int(1520/(odd_manbetx - 1)) + 1  #money_manbet 下注最佳额
 
-    if money_mycat_prof >= 300 and money_mycat_prof < 500:
-        bonus = 58
-    elif money_mycat_prof >= 500 and money_mycat_prof < 2000:
-        bonus = 88
-    elif money_mycat_prof >= 2000:
-        bonus = 388
-    else:
-        bonus = 0
+    money_manebet_original =  money_mycat * odd_mycat / odd_manbetx
+    num_manbetx = int(money_manebet_original / money_manbet_best)  # manbet下注满额用户数
+    money_manebet_left = money_manebet_original - num_manbetx * money_manbet_best #最后一个余额用户下注金额
 
-    money_manbetx = (odd_mycat * money_mycat + bonus) / odd_manbetx
+    money_mycat_add = (money_manebet_original * odd_manbetx + 152 * num_manbetx) / odd_mycat - money_mycat
 
-    profit = (odd_manbetx-1) * money_manbetx - money_mycat
 
-    print("mycat最佳投注额: ", money_mycat_best)
-    print("manbet下注额: ", money_manbetx)
-    print("profit盈利: ", profit)
+
+    print("manbet下注用户数:", num_manbetx + 1)
+    print("manbet下注总金额:", money_manebet_original)
+    print("manbet每个用户下注额:", money_manbet_best)
+    print("manbet最后一个用户下注额:", money_manebet_left)
+    print("cat补加总金额:", money_mycat_add)
+    print("总盈利:", (money_mycat_add + money_mycat) * (odd_mycat - 1) - money_manebet_original)
+    print("总盈利:", money_manebet_original * (odd_manbetx -1) + num_manbetx * 152 - money_mycat_add - money_mycat )
 
 
 def  pb_vs_manbetx(odd_pb, odd_manbetx, money_pb):
@@ -213,4 +211,4 @@ if __name__ == '__main__':
     # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=510)
 
     # pb_vs_manbetx_barcelona_madrid(odd_pb=1.97, odd_manbetx=1.97, money_pb=1000)
-    pb_vs_manbetx(odd_pb=1.97, odd_manbetx=1.97, money_pb=5050)
+    mycat_vs_manbetx(odd_mycat=1.97,odd_manbetx=1.99, money_mycat=12000)
