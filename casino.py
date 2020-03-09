@@ -211,4 +211,4 @@ if __name__ == '__main__':
     # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=510)
 
     # pb_vs_manbetx_barcelona_madrid(odd_pb=1.97, odd_manbetx=1.97, money_pb=1000)
-    mycat_vs_manbetx(odd_mycat=1.97,odd_manbetx=1.99, money_mycat=12000)
+    mycat_vs_manbetx(odd_mycat=1.86, odd_manbetx=2.16, money_mycat=15000)
