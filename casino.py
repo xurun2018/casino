@@ -86,30 +86,20 @@ def lovebet_vs_manbetx_insurance(odd_lovebet, odd_wellbet, money_lovebet):
 
 def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     '''
-
+    针对grace账户（v1）进行的投注策略判断。
     :param odd_mycat: mycat赔率
     :param odd_manbetx: 万博赔率
     :param money_mycat: mycat下注额
     :return:
     '''
 
-    money_manbet_best = int(1520/(odd_manbetx - 1)) + 1  #money_manbet 下注最佳额
+    rebonus_manbetx = 0.02
+    money_manbetx = (odd_mycat * money_mycat + 152 - money_mycat * 0.02)/ (odd_manbetx + rebonus_manbetx)
+    print(money_manbetx)
+    print("总盈利:", (money_mycat * (odd_mycat - 1) - money_manbetx + 152))
+    print("总盈利:", (money_manbetx * (odd_manbetx - 1) + money_mycat * 0.02 + money_manbetx * rebonus_manbetx - money_mycat))
 
-    money_manebet_original =  money_mycat * odd_mycat / odd_manbetx
-    num_manbetx = int(money_manebet_original / money_manbet_best)  # manbet下注满额用户数
-    money_manebet_left = money_manebet_original - num_manbetx * money_manbet_best #最后一个余额用户下注金额
-
-    money_mycat_add = (money_manebet_original * odd_manbetx + 152 * num_manbetx) / odd_mycat - money_mycat
-
-
-
-    print("manbet下注用户数:", num_manbetx + 1)
-    print("manbet下注总金额:", money_manebet_original)
-    print("manbet每个用户下注额:", money_manbet_best)
-    print("manbet最后一个用户下注额:", money_manebet_left)
-    print("cat补加总金额:", money_mycat_add)
-    print("总盈利:", (money_mycat_add + money_mycat) * (odd_mycat - 1) - money_manebet_original)
-    print("总盈利:", money_manebet_original * (odd_manbetx -1) + num_manbetx * 152 - money_mycat_add - money_mycat )
+    # print("总盈利:", money_manebet_original * (odd_manbetx -1) + num_manbetx * 152 - money_mycat_add - money_mycat )
 
 
 def  pb_vs_manbetx(odd_pb, odd_manbetx, money_pb):
@@ -211,4 +201,4 @@ if __name__ == '__main__':
     # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=510)
 
     # pb_vs_manbetx_barcelona_madrid(odd_pb=1.97, odd_manbetx=1.97, money_pb=1000)
-    mycat_vs_manbetx(odd_mycat=1.86, odd_manbetx=2.16, money_mycat=15000)
+    mycat_vs_manbetx(odd_mycat=1.90, odd_manbetx=2.05, money_mycat=17000)
