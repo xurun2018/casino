@@ -102,6 +102,44 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     # print("总盈利:", money_manebet_original * (odd_manbetx -1) + num_manbetx * 152 - money_mycat_add - money_mycat )
 
 
+def platform_vs_manbetx(odd_plat, odd_manbetx, money_manbetx):
+    '''
+    父亲节万博活动
+    :param odd_plat: 对打平台赔率
+    :param odd_manbetx: 万博赔率
+    :param money_manbetx: 万博平台下注额
+    :return:
+    '''
+
+    #rebonus: 万博奖励彩金
+
+    win_manbetx = money_manbetx * (odd_manbetx - 1)
+
+    rebonus = 0
+    if win_manbetx >= 352 and win_manbetx < 520:
+        rebonus = 8
+
+    elif win_manbetx >= 520 and win_manbetx < 888:
+        rebonus = 18
+    elif win_manbetx >= 888 and win_manbetx < 1520:
+        rebonus = 28
+    elif win_manbetx >= 1520 and win_manbetx < 5520:
+        rebonus = 52
+    elif win_manbetx >= 5520:
+        rebonus = 188
+
+
+
+    rebonus_water = 0.004
+    money_plat = (money_manbetx * odd_manbetx + rebonus)/odd_plat
+    print("money_plat:", money_plat)
+    print("总盈利:", (money_manbetx * (odd_manbetx - 1) - money_plat + rebonus + money_manbetx * rebonus_water))
+    print("总盈利:", money_plat * (odd_plat - 1)  - money_manbetx + money_manbetx * rebonus_water)
+
+    # print("总盈利:", money_manebet_original * (odd_manbetx -1) + num_manbetx * 152 - money_mycat_add - money_mycat )
+
+
+
 def  pb_vs_manbetx(odd_pb, odd_manbetx, money_pb):
     '''
     有效投注    最高返还    流水倍数
@@ -193,12 +231,6 @@ def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
 
 if __name__ == '__main__':
 
-    # manbet_uven(1.92, 2.00, 2000, 'wellbet')
-    # manbet_uven(odd_platform=1.86,odd_manbet=2.07,money_platform=1418,platform='crown')
-    # platform_vs_manbet(odd_platform=1.96, odd_manbet=1.99, money_platform=3191,platform='lovebet')
-    # lovebet_vs_manbetx_insurance(odd_lovebet=2.02, odd_wellbet=1.91, money_lovebet=2031)
 
-    # mycat_vs_manbetx(odd_mycat=2.05, odd_manbetx=1.89, money_mycat=510)
-
-    # pb_vs_manbetx_barcelona_madrid(odd_pb=1.97, odd_manbetx=1.97, money_pb=1000)
-    mycat_vs_manbetx(odd_mycat=1.90, odd_manbetx=2.05, money_mycat=17000)
+    # mycat_vs_manbetx(odd_mycat=1.90, odd_manbetx=2.05, money_mycat=17000)
+    platform_vs_manbetx(odd_plat=1.97, odd_manbetx=2.02, money_manbetx=5520)
