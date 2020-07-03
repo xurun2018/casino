@@ -93,11 +93,12 @@ def mycat_vs_manbetx(odd_mycat, odd_manbetx, money_mycat):
     :return:
     '''
 
-    rebonus_manbetx = 0.01
-    rebonus_cat = 0.02
-    money_manbetx = (odd_mycat * money_mycat + 18 - money_mycat * rebonus_cat)/ (odd_manbetx + rebonus_manbetx)
+    rebonus_manbetx = 0.02
+    rebonus_cat = 0.04
+    manbet_bonus = 152
+    money_manbetx = (odd_mycat * money_mycat + manbet_bonus - money_mycat * rebonus_cat)/ (odd_manbetx + rebonus_manbetx)
     print(money_manbetx)
-    print("总盈利:", (money_mycat * (odd_mycat - 1) - money_manbetx + 18))
+    print("总盈利:", (money_mycat * (odd_mycat - 1) - money_manbetx + manbet_bonus))
     print("总盈利:", (money_manbetx * (odd_manbetx - 1) + money_mycat * rebonus_cat + money_manbetx * rebonus_manbetx - money_mycat))
 
     # print("总盈利:", money_manebet_original * (odd_manbetx -1) + num_manbetx * 152 - money_mycat_add - money_mycat )
@@ -233,5 +234,5 @@ def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
 if __name__ == '__main__':
 
 
-    mycat_vs_manbetx(odd_mycat=2, odd_manbetx=1.96, money_mycat=2325)
+    mycat_vs_manbetx(odd_mycat=2, odd_manbetx=1.96, money_mycat=19000)
     # platform_vs_manbetx(odd_plat=1.97, odd_manbetx=2.02, money_manbetx=5520)
