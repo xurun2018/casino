@@ -234,5 +234,5 @@ def eura_champion(odd_mycat, odd_manbetx, mycat_flag=True):
 if __name__ == '__main__':
 
 
-    mycat_vs_manbetx(odd_mycat=2, odd_manbetx=1.96, money_mycat=19000)
+    mycat_vs_manbetx(odd_mycat=2.03, odd_manbetx=1.91, money_mycat=9776)
     # platform_vs_manbetx(odd_plat=1.97, odd_manbetx=2.02, money_manbetx=5520)
